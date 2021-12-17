@@ -24,6 +24,14 @@ export class Statments extends BaseResource {
 
         return this.httpGet<string>(`/${statementId}/html`, {params: parameters})
     }
+
+    public getPdf(statementId: string, customerId?: string): Promise<string> {
+        const parameters = {
+            ...(customerId && { "filter[customerId]": customerId })
+        }
+
+        return this.httpGet<string>(`/${statementId}/pdf`, {params: parameters})
+    }
 }
 
 export interface StatementsListParams {
