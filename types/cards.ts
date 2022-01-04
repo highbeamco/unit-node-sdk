@@ -519,4 +519,26 @@ export interface ReplaceCardRequest {
     shippingAddress?: Address
 }
 
+export interface CardLimits {
+    type: "limits"
+    attributes: {
+        limits: {
+            dailyWithdrawal: number
+            dailyPurchase: number
+            monthlyWithdrawal: number
+            monthlyPurchase: number
+        }
+        dailyTotals: {
+            withdrawals: number
+            deposits: number
+            purchases: number
+        }
+        monthlyTotals: {
+            withdrawals: number
+            deposits: number
+            purchases: number
+        }
+    }
+}
+
 
