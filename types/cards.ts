@@ -411,12 +411,12 @@ export interface CreateBusinessDebitCardRequest {
         /**
          * See [Idempotency](https://developers.unit.co/#intro-idempotency).
          */
-        idempotencyKey: string
+        idempotencyKey?: string
 
         /**
          *  See [Tags](https://developers.unit.co/#tags).
          */
-        tags: object
+        tags?: object
     }
 
     relationships: {
@@ -434,12 +434,12 @@ export interface CreateIndividualVirtualDebitCardRequest {
         /**
          * See [Idempotency](https://developers.unit.co/#intro-idempotency).
          */
-        idempotencyKey: string
+        idempotencyKey?: string
 
         /**
          *  See [Tags](https://developers.unit.co/#tags).
          */
-        tags: object
+        tags?: object
     }
 
     relationships: {
@@ -498,12 +498,12 @@ export interface CreateBusinessVirtualDebitCardRequest {
         /**
          * See [Idempotency](https://developers.unit.co/#intro-idempotency).
          */
-        idempotencyKey: string
+        idempotencyKey?: string
 
         /**
          *  See [Tags](https://developers.unit.co/#tags).
          */
-        tags: object
+        tags?: object
     }
 
     relationships: {
@@ -517,6 +517,14 @@ export interface CreateBusinessVirtualDebitCardRequest {
 export interface ReplaceCardRequest {
     id: string
     shippingAddress?: Address
+}
+
+export interface PinStatus {
+    type: "pinStatus"
+
+    attributes: {
+        status: "Set" | "NotSet"
+    }
 }
 
 export interface CardLimits {
@@ -542,3 +550,22 @@ export interface CardLimits {
 }
 
 
+    attributes: {
+        limits: {
+            dailyWithdrawal: number
+            dailyPurchase: number
+            monthlyWithdrawal: number
+            monthlyPurchase: number
+        }
+        dailyTotals: {
+            withdrawals: number
+            deposits: number
+            purchases: number
+        }
+        monthlyTotals: {
+            withdrawals: number
+            deposits: number
+            purchases: number
+        }
+    }
+}
