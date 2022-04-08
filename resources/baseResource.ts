@@ -12,7 +12,6 @@ export class BaseResource {
         this.headers = {
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/vnd.api+json",
-            "User-Agent": "unit-node-sdk"
         }
 
         this.axios = config?.axios ?? axiosStatic
