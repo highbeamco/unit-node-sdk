@@ -1,5 +1,5 @@
 {
-  "name": "@unit-finance/unit-node-sdk",
+  "name": "@highbeam/unit-node-sdk",
   "version": "0.19.1",
   "description": "",
   "main": "dist/unit.js",
