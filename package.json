@@ -1,6 +1,6 @@
 {
   "name": "@highbeam/unit-node-sdk",
-  "version": "1.1.1",
+  "version": "1.2.6",
   "description": "",
   "main": "dist/unit.js",
   "types": "dist/unit.d.ts",
