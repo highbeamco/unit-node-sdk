@@ -326,7 +326,7 @@ export type BookTransaction = BaseTransaction & {
 }
 
 export type CardRelatedTransactionsBaseAttributes = {
-    merchant: Merchant
+    merchant: Merchant | null
 
     /**
      * Indicates whether the transaction is recurring
